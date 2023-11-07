@@ -1,28 +1,14 @@
 import React from 'react';
-import styles from './Main.module.css'
 import { Link } from 'react-router-dom';
-import LetterIco from '/Work/HeartOfLEtter/src/img/letter-svgrepo-com (1).svg'
-import BoxIco from '/Work/HeartOfLEtter/src/img/box-svgrepo-com.svg'
+import styles from 'components/Main/Main.module.css'
+import LetterIco from 'img/letter-svgrepo-com (1).svg'
+import BoxIco from 'img/box-svgrepo-com.svg'
+import Header from "../Header/Header";
 
 function Main() {
   return (
     <>
-      <header>
-        <div className={styles.inner}>
-          <div className={styles.head_container}>
-            <div className={styles.head_brand}>마음의 편지</div>
-            <img src={LetterIco} />
-            <div className={styles.login_signup}>
-              <div className={styles.login}>
-                <a href="">로그인</a>
-              </div>
-              <div className={styles.signup}>
-                <a href="">회원가입</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header/>
       <div className={styles.section}>
         <section>
         <Link to={'/Write'}>
