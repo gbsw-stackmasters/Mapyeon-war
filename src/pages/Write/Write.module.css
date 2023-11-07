@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  margin-top: 10rem;
+  margin-left: 30rem;
+}
+
+.title > span {
+  font-size: 2rem;
+  padding-right: 20px;
+}
