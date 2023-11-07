@@ -1,5 +1,6 @@
 .title {
   display: flex;
+  align-items: center;
   margin-top: 10rem;
   margin-left: 30rem;
 }
@@ -8,3 +9,29 @@
   font-size: 2rem;
   padding-right: 20px;
 }
+
+.write_title {
+  width: 35rem;
+  height: 3rem;
+  border: #1F4D2C 4px solid;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.title > div {
+  padding-left: 0.5rem;
+}
+
+.title > div > button {
+  width: 4rem;
+  height: 3rem;
+  font-size: 1.1rem;
+  border: #1F4D2C 4px solid;
+  border-radius: 15px;
+  font-weight: 100;
+  cursor: pointer;
+  transition: all .25s;
+  margin-left: 0.5rem;
+}
+

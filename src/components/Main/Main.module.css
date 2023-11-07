@@ -27,6 +27,7 @@
   width: 200px;
   margin-top: 5rem;
   margin-left: 6.5rem;
+  cursor: pointer;
 }
 
 .letter_container > .letter > img {

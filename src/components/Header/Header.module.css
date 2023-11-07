@@ -58,15 +58,27 @@ header {
     top: -3px;
 }
 
-.head_container .head_brand {
-    margin-left: 25rem;
-    width: 10rem;
+.head_container > div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative; top: 0px; transition: top 0.2s;
+}
+
+
+.head_container > div:hover {
+  top: -3px;
+}
+
+.head_container > div > .head_brand {
+    margin-left: 30rem;
+    width: 7rem;
     font-weight: 100;
     font-size: 1.5rem;
     color: #fff;
 }
 
-.head_container > img {
+.head_container > div > img {
     margin-right: 70rem;
     width: 30px;
 }
