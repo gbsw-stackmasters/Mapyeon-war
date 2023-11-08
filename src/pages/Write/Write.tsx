@@ -40,7 +40,10 @@ function Writepage() {
         </div>
         <div className={styles.detail}>
           <span>내용</span>
-          <input type="text" className={styles.write_detail} />
+          <textarea  className={styles.write_detail}  />
+        </div>
+        <div className='submit'>
+          <input type="submit" value={"보내기"} className={styles.submit}/>
         </div>
       </div>
     </>

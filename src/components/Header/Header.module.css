@@ -32,9 +32,10 @@ header {
     display: flex;
     justify-content: space-around;
     width: 30rem;
+    margin-left: 20rem;
 }
 
-.head_container .login > a {
+.head_container > .login_signup > .login > a {
     font-weight: 100;
     font-size: 1.5rem;
     color: #fff;
@@ -42,11 +43,11 @@ header {
     position: relative; top: 0px; transition: top 0.2s;
 }
 
-.head_container .login > a:hover {
+.head_container > .login_signup > .login > a:hover {
     top: -3px;
 }
 
-.head_container .signup > a {
+.head_container > .login_signup >.signup > a {
     font-weight: 100;
     font-size: 1.5rem;
     color: #fff;
@@ -54,24 +55,23 @@ header {
     position: relative; top: 0px; transition: top 0.2s;
 }
 
-.head_container .signup > a:hover {
+.head_container > .login_signup > .signup > a:hover {
     top: -3px;
 }
 
-.head_container > div {
+.head_container > .header_brand {
   display: flex;
   align-items: center;
-  cursor: pointer;
   position: relative; top: 0px; transition: top 0.2s;
+  cursor: pointer;
 }
 
-
-.head_container > div:hover {
+.head_container > .header_brand:hover {
   top: -3px;
 }
 
-.head_container > div > .head_brand {
-    margin-left: 30rem;
+.head_brand {
+    margin-left: 10rem;
     width: 7rem;
     font-weight: 100;
     font-size: 1.5rem;
@@ -79,6 +79,6 @@ header {
 }
 
 .head_container > div > img {
-    margin-right: 70rem;
+    margin-right: 30rem;
     width: 30px;
 }

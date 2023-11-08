@@ -9,7 +9,7 @@ const Header = () => {
     <header>
       <div className={styles.inner}>
         <div className={styles.head_container}>
-          <div onClick={() => navigate('/Main')}>
+          <div onClick={() => navigate('/')} className={styles.header_brand}>
           <div className={styles.head_brand}>마음의 편지</div>
            <img src={LetterIco}/>
           </div>
