@@ -1,0 +1,61 @@
+@font-face{
+  font-family:'bitbit';
+  src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'bitbit';
+}
+
+.login_section {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+
+.login_box {
+  color: #fff;
+  width: 30vw;
+  height: 43vh;
+  background-color: rgb(30, 77, 43);
+  margin-top: 15%;
+  border-radius: 30px;
+}
+
+.login_box > h3 {
+  margin-top: 40px;
+  font-size: 35px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.form_area {
+  margin-top: 8%;
+}
+
+#input_box {
+  height: 40px;
+  width: 70%;
+  display: block;
+  margin-top: 23px;
+  margin-left: 14%;
+  border-radius: 11px;
+  text-indent: 5%; /* placeholder 위치를 옮겨주는  css속성 */
+  font-size: 18px;
+}
+
+#sub_btn {
+  width: 30%;
+  height: 45px;
+  margin-top: 25px;
+  margin-left: 34%;
+  border-radius: 12px;
+  font-size: 20px;
+  color: #1F4D2C;
+}
+
+#sub_btn:hover {
+  cursor: pointer;
+}

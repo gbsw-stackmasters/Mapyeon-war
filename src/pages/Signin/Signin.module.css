@@ -1,0 +1,67 @@
+@font-face{
+  font-family:'bitbit';
+  src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family:'bitbit';
+}
+
+/* font css end line */
+
+/* SignIn css Code start line */
+
+.signIn_section {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+
+.signIn_box {
+  color: #fff;
+  width: 30vw;
+  height: 70vh;
+  background-color: rgb(30, 77, 43);
+  margin-top: 9%;
+  border-radius: 30px;
+}
+
+.signIn_box > h3 {
+  margin-top: 40px;
+  font-size: 35px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.form {
+  margin-top: 8%;
+}
+
+#sub_btn {
+  width: 30%;
+  height: 45px;
+  margin-top: 25px;
+  margin-left: 34%;
+  border-radius: 12px;
+  font-size: 20px;
+  color: rgb(30, 77, 43);
+}
+
+form {
+  margin-top: -18px;
+}
+
+form > input {
+  height: 40px;
+  width: 70%;
+  margin-top: 20px;
+  margin-left: 14%;
+  border-radius: 11px;
+  text-indent: 5%;
+  font-size: 18px;
+  display: block;
+}
+
+/* SignIn css Code end line */

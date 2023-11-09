@@ -9,16 +9,16 @@ const Header = () => {
     <header>
       <div className={styles.inner}>
         <div className={styles.head_container}>
-          <div onClick={() => navigate('/')} className={styles.header_brand}>
-          <div className={styles.head_brand}>마음의 편지</div>
-           <img src={LetterIco}/>
+          <div onClick={() => navigate("/")} className={styles.header_brand}>
+            <div className={styles.head_brand}>마음의 편지</div>
+            <img src={LetterIco} />
           </div>
           <div className={styles.login_signup}>
             <div className={styles.login}>
-              <a href="">로그인</a>
+              <div onClick={() => navigate("/Login")}>로그인</div>
             </div>
             <div className={styles.signup}>
-              <a href="">회원가입</a>
+              <div onClick={() => navigate("/Signin")}>회원가입</div>
             </div>
           </div>
         </div>

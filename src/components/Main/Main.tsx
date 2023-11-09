@@ -26,7 +26,7 @@ function Main() {
         <section>
           <div className={styles.store_container}>
             <div className={styles.store}>
-              <img src={BoxIco} />
+              <img src={BoxIco} onClick={() => navigate('/Store')}/>
               <div className={styles.store_name}>
                 마음 <br />
                 보관함

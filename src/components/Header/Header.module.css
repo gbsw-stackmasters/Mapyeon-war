@@ -35,27 +35,29 @@ header {
     margin-left: 20rem;
 }
 
-.head_container > .login_signup > .login > a {
+.head_container > .login_signup > .login > div {
     font-weight: 100;
     font-size: 1.5rem;
     color: #fff;
     text-decoration: none;
     position: relative; top: 0px; transition: top 0.2s;
+    cursor: pointer;
 }
 
-.head_container > .login_signup > .login > a:hover {
+.head_container > .login_signup > .login > div:hover {
     top: -3px;
 }
 
-.head_container > .login_signup >.signup > a {
+.head_container > .login_signup >.signup > div {
     font-weight: 100;
     font-size: 1.5rem;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
     position: relative; top: 0px; transition: top 0.2s;
 }
 
-.head_container > .login_signup > .signup > a:hover {
+.head_container > .login_signup > .signup > div:hover {
     top: -3px;
 }
 
