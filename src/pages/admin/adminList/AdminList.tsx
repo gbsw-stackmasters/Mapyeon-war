@@ -1,11 +1,7 @@
-import styles from './Store.module.css'
-import Header from "../../components/Header/Header";
+import styles from './AdminList.module.css'
 import { useEffect, useState } from 'react';
-import { constants } from 'buffer';
-import axios from 'axios'
 import axiosInstance from 'utils/axiosInstance';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 interface Store {
   uuid: string
   title: string
@@ -13,9 +9,9 @@ interface Store {
   isShow: boolean,
   createdAt: string;
 }
-function Store () {
-  const {id} = useParams();
+function Admin () {
   const navigate = useNavigate();
+  const {id} = useParams();
   const [list, setList] = useState<Store[]>([{
     uuid: "hongjea",
     title: "hongjea",
@@ -26,6 +22,19 @@ function Store () {
   const [page, setPage] = useState<number>(1)
   
   useEffect(()=>{
+    axiosInstance('/api/auth/isLogin',{
+        method:"GET"
+    }).then((res)=>{
+        if(res.data.success){
+            console.log(res.data.users)
+            if(res.data.users.type !== 'admin'){
+                alert('잘못된 접근입니다')
+                window.location.href = '/';
+            }
+        }
+    }).catch((err)=>{
+        window.location.href = '/login';
+    })
     axiosInstance(`/api/board/get/list?page=${id}`,{
       method: "GET",
     }).then((res)=>{
@@ -37,7 +46,23 @@ function Store () {
   },[id])
 
   const handleOnClickPage = (pageNum:number) => {
-    navigate(`/Store/${pageNum}`)
+    navigate(`/admin/list/${pageNum}`);
+  }
+
+  const handleOnClickDelete = (uuid:string) => {
+    axiosInstance('/api/board/delete',{
+        method: "DELETE",
+        data:{
+            uuid
+        }
+    }).then((res)=>{
+        if(res.data.success){
+            alert(res.data.message);
+            window.location.href = '/admin/list'
+        }
+    }).catch((err)=>{
+        alert(err.response.data.message);
+    })
   }
   return (
     <div>
@@ -49,8 +74,9 @@ function Store () {
             return (
             <>
               <div className={styles.store_box}> 
-              <div className={styles.store_title} key={index} style={{cursor: 'pointer'}} onClick={()=>{navigate(`/detail/${it.uuid}`)}}>{it.title}</div>
+              <div className={styles.store_title} style={{cursor: 'pointer'}} key={index} onClick={()=>{navigate(`/detail/${it.uuid}`)}}>{it.title}</div>
               <div className={styles.store_create_date}>{createdAt.getFullYear()}-{createdAt.getMonth() + 1}-{createdAt.getDate()}</div>
+              <button onClick={()=>{handleOnClickDelete(it.uuid)}} className={styles.deleteBtn}>삭제</button>
               </div>
             </>
            )
@@ -70,4 +96,4 @@ function Store () {
   );
 }
 
-export default Store;
+export default Admin;

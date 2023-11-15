@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.store_container {
+  width: 50rem;
+  height: 37rem;
+  color: #000;
+  margin: 0 auto;
+  margin-top: 90px;
+  text-align: center;
+  line-height: 1.2rem;
+  padding-top: 2.8rem;
+}
+.deleteBtn{
+  background-color: red;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 1%;
+  color: white;
+  position: relative;
+  left: 100px;
+  bottom: 30px;
+  cursor: pointer;
+}
+.store_box {
+  width: 50rem;
+  height: 3rem;
+  border: #000 5px solid;
+  color: #000;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.pagenation {
+  margin-left: auto;
+  position: absolute;
+  left: 30%;
+  bottom: 3%;
+}
+
+.pagenation > button {
+  width: 3rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+  background-color: #1F4D2C;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}

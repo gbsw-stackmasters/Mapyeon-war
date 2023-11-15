@@ -9,7 +9,6 @@ function Main() {
   const navigate = useNavigate();
   return (
     <>
-      <Header/>
       <div className={styles.section}>
         <section>
           <div className={styles.letter_container}>
@@ -26,7 +25,7 @@ function Main() {
         <section>
           <div className={styles.store_container}>
             <div className={styles.store}>
-              <img src={BoxIco} onClick={() => navigate('/Store')}/>
+              <img src={BoxIco} onClick={() => navigate('/Store/1')}/>
               <div className={styles.store_name}>
                 마음 <br />
                 보관함

@@ -1,0 +1,78 @@
+  .Writes{
+    width: 100vw;
+  }
+  .Write_container {
+    margin: 0 auto;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    margin-top: 10rem;
+    margin-left: 20rem;
+  }
+  
+  .title > span {
+    font-size: 2rem;
+    padding-right: 20px;
+    color: #1F4D2C;
+  }
+  
+  .write_title {
+    width: 45rem;
+    height: 3rem;
+    border: #1F4D2C 4px solid;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+  
+  .title > div {
+    padding-left: 0.5rem;
+  }
+  
+  .title > div > button {
+    width: 4rem;
+    height: 3rem;
+    font-size: 1.1rem;
+    border: #1F4D2C 4px solid;
+    border-radius: 15px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all .25s;
+    margin-left: 0.5rem;
+  }
+  
+  .detail {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 20rem;
+  }
+  
+  .write_detail {
+    width: 45rem;
+    height: 20rem;
+    border: #1F4D2C 4px solid;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+  
+  .detail > span {
+    font-size: 2rem;
+    padding-right: 20px;
+    color: #1F4D2C;
+  }
+  
+  .submit {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 15px;
+    background-color: #1F4D2C;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: 42rem;
+    cursor: pointer;
+  }
