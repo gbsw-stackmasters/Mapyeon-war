@@ -2,11 +2,13 @@ import { TypeOrmModuleOptions } from "@nestjs/typeorm";
 
 function ormConfig(): TypeOrmModuleOptions {
     const commonConf = {
-        SYNCRONIZE: false,
-        ENTITIES: [__dirname + '/entities/*{.ts,.js}'],
-        MIGRATIONS: [__dirname + '/migrations/**/*{.ts,.js}'],
-        MIGRATIONS_RUN: false,
+        synchronize: false,
+        entities: [__dirname + '/entities/**/*{.ts,.js}'],
+        migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
+        migrationsRun: false,
+        
     };
+    
 
     return {
         name: 'default',
@@ -17,10 +19,11 @@ function ormConfig(): TypeOrmModuleOptions {
         username: process.env.DATABASE_USERNAME,
         password: process.env.DATABASE_PASSWORD,
         logging: true,
-        synchronize: commonConf.SYNCRONIZE,
-        entities: commonConf.ENTITIES,
-        migrations: commonConf.MIGRATIONS,
-        migrationsRun: commonConf.MIGRATIONS_RUN,
+        synchronize: commonConf.synchronize,
+        entities: commonConf.entities,
+        migrations: commonConf.migrations,
+        migrationsRun: commonConf.migrationsRun,
+        autoLoadEntities: true,
     };
 }
 

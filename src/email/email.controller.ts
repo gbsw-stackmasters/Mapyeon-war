@@ -9,15 +9,14 @@ export class EmailController {
 
   @Post('/sendEmail')
   async sendVerificationCode(@Req() req:Request,@Res() res:Response) {
-    const {id} = req.body;
+    const {email} = req.body;
     try{
-        if(!id) throw({status:400,message:"이메일을 입력해주세요"});
-        const email:string = id;
-        const verificationCode = await this.emailService.generateVerificationCode(email);
+        if(!email) throw({status:400,message:"이메일을 입력해주세요"});
+        const verificationCode = await this.emailService.generateVerificationCode(email,req,res);
         const subject = '이메일 인증 코드가 도착했습니다!';
         const text = `인증 코드: ${verificationCode}`;
         await this.emailService.sendEmail(email, subject, text);
-    
+     
         return res.json({
             success: true,
             message: '이메일 인증 코드가 전송되었습니다.'
@@ -32,11 +31,11 @@ export class EmailController {
 
   @Post('/checkEmail')
   async checkVerificationCode(@Req() req:Request,@Res() res:Response) {
-    const {id,chk} = req.body;
+    const {email,chk} = req.body;
     try{
-        if(!id) throw({status:400,message:"이메일을 입력해주세요"});
+        if(!email) throw({status:400,message:"이메일을 입력해주세요"});
         if(!chk) throw({status:400,message:"인증번호를 입력해주세요"});
-        const isCodeValid = await this.emailService.checkVerificationCode(id, chk);
+        const isCodeValid = await this.emailService.checkVerificationCode(email, chk);
 
         if (isCodeValid) {
             return res.json({

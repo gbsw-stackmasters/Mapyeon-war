@@ -2,12 +2,20 @@ import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
 import * as cacheManager from 'cache-manager';
 import UsersEntity from 'src/entities/auth.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { read } from 'fs';
+import { Repository } from 'typeorm';
+import {Request, Response} from 'express';
 @Injectable()
 export class EmailService {
   private transporter;
   private cache;
 
-  constructor() {
+  constructor(
+    @InjectRepository(UsersEntity)
+    private readonly authRepository: Repository<UsersEntity>
+  ) {
+    
     this.transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
@@ -37,16 +45,29 @@ export class EmailService {
       throw new Error(error);
     }
   }
-  async generateVerificationCode(email: string) {
+  async generateVerificationCode(emails: string,req:Request,res:Response) {
+    const {email} = req.body;
+
+    const em = await this.authRepository.findOne({
+      where: {
+        email
+      }
+    })
+    if(em){
+      res.status(200).json({
+        success: false,
+        message: '이미 존제하는 이메일입니다'
+      })
+    }
 
     let rand = "";
     for(let i = 0; i < 6; ++i){
       const a = Math.floor(Math.random() * 10);
     
       rand += `${a}`;
-    };
+    }; 
     const verificationCode = rand;
-    await this.cache.set(email, verificationCode, { ttl: 30 });
+    await this.cache.set(emails, verificationCode, { ttl: 1000 * 60 * 5 });
     return verificationCode;
   }
   

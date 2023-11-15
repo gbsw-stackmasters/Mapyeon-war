@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete,Req,Res } from '@nestjs/common';
+import { Controller, Get, Post, Body, Put, Param, Delete,Req,Res } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
 //import { UpdateAuthDto } from './dto/update-auth.dto';
@@ -16,7 +16,7 @@ export class AuthController {
     return this.authService.logout(res);
   }
 
-  @Post('/isLogin')
+  @Get('/isLogin')
   async isLogin(@Req() req:Request,@Res() res:Response){
     return this.authService.isLogin(req, res);
   }
@@ -31,4 +31,14 @@ export class AuthController {
     return this.authService.register(req, res);
   }
 
+  @Get('/list')
+  list(@Req() req:Request, @Res() res:Response) {
+    return this.authService.list(req, res);
+  }
+
+  @Put('/change/type')
+  changeType(@Req() req:Request, @Res() res:Response){
+    return this.authService.changeType(req,res);
+  }
+  
 }
