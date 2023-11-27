@@ -33,6 +33,8 @@ function Store () {
         setList(res.data.list);
         setPage(res.data.length);
       }
+    }).catch((err)=>{
+      window.location.href = "/login";
     })
   },[id])
 

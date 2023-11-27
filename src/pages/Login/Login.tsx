@@ -25,6 +25,8 @@ function Login() {
         setCookie('successLogin',res.data.token,{ path: "/" })
         alert(res.data.message);
         window.location.href = '/'
+      }else{
+        alert(res.data.message);
       }
     }).catch((err)=>{
       alert(err.response.data.message);
