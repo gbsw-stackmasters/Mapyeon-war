@@ -79,7 +79,7 @@ async login(req: Request, res: Response) {
                 message: "로그인 완료",
                 token
             })
-        }
+        } 
         return res.json({
             success:false,
             message: '비밀번호가 틀렸습니다'
