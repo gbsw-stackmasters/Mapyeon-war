@@ -148,7 +148,7 @@ async isLogin(req:Request,res:Response){
         const verify = await this.jwtService.verify(successLogin,{secret: process.env.SECRET_TOKEN});
         const users =  await this.userRepository.findOne({
             where: {
-                id: verify.id
+                uuid: verify.uuid
             }
         })
         return res.json({
